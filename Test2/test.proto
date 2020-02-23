@@ -1,0 +1,31 @@
+syntax = "proto2";
+package CMPE275;
+
+message Test1 {
+    repeated int32 int1 = 1;
+    repeated int32 int2 = 2 [packed = true];
+}
+
+message Test2 {
+    repeated double double1 = 1 [packed = true];
+    repeated float float1 = 2 [packed = true];
+    repeated int32 int1 = 3 [packed = true];
+    repeated uint32 int2 = 4 [packed = true];
+    repeated sint32 int3 = 5 [packed = true];
+    repeated fixed32 int4 = 6 [packed = true];
+}
+
+message Test3Sub {
+    optional int32 int1 = 1;
+    optional int32 int2 = 2;
+    optional int32 int3 = 3;
+    optional int32 int4 = 4;
+}
+message Test3 {
+    repeated Test3Sub sub = 1;
+
+    repeated int32 int1 = 2 [packed = true];
+    repeated int32 int2 = 3 [packed = true];
+    repeated int32 int3 = 4 [packed = true];
+    repeated int32 int4 = 5 [packed = true];
+}
